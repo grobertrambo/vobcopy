@@ -1,0 +1,176 @@
+vobcopy (1.2.0-7) unstable; urgency=medium
+
+  * merge patch from Fab Stz <fabstz-it@yahoo.fr> (closes: #867388)
+  * bump to debhelper 11
+  * bump policy version
+  * enable hardening
+  * address non-function-affecting lintian issues
+
+ -- Barak A. Pearlmutter <bap@debian.org>  Thu, 25 Jan 2018 18:30:24 +0000
+
+vobcopy (1.2.0-6) unstable; urgency=medium
+
+  * accept small chapter patch
+
+ -- Barak A. Pearlmutter <bap@debian.org>  Sun, 08 May 2016 17:08:15 +0100
+
+vobcopy (1.2.0-5) unstable; urgency=low
+
+  * kfreebsd patch (closes: #697016)
+
+ -- Barak A. Pearlmutter <bap@debian.org>  Mon, 16 Sep 2013 22:55:50 +0100
+
+vobcopy (1.2.0-4) unstable; urgency=low
+
+  * add build dependency on autopoint
+
+ -- Barak A. Pearlmutter <bap@debian.org>  Tue, 06 Nov 2012 16:55:37 +0000
+
+vobcopy (1.2.0-3) unstable; urgency=low
+
+  * Further immerse package in the ocean of autotools cruft (patches)
+
+ -- Barak A. Pearlmutter <bap@debian.org>  Thu, 26 Jan 2012 12:27:41 +0000
+
+vobcopy (1.2.0-2) unstable; urgency=low
+
+  * Switch to autotools build system (patch)
+
+ -- Barak A. Pearlmutter <bap@debian.org>  Tue, 17 Jan 2012 11:54:35 +0000
+
+vobcopy (1.2.0-1) unstable; urgency=low
+
+  * New upstream release (closes: #627915)
+    - includes open O_CREAT permission bits patch (closes: #511978)
+    - now checks for read failure, in loop (closes: #471047)
+    - includes GNU/kFreeBSD __GLIBC__ patch (closes: #465966)
+  * Update debian packaging
+  * Quilt patches
+    - Hurd FTBS patch (closes: #641283),
+      thanks to Svante Signell <svante.signell@telia.com>
+    - Silence scary incorrect pointer type gcc warning
+    - Man page slash dash hash mash, for the lintian
+
+ -- Barak A. Pearlmutter <bap@debian.org>  Sun, 01 Jan 2012 19:26:22 +0100
+
+vobcopy (1.1.0-1) unstable; urgency=low
+
+  * New upstream release
+    - New symlink attack solution by upstream to solve CVE-2007-5718
+      The upstream solution creates temp files in the current working
+      directory
+    - MacOSX (at least 10.5) compiles again
+    - Use safe string copy routines to avoid buffer overflow exploits
+    - Other small fixes by upstream
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Wed, 23 Jan 2008 12:00:14 +0000
+
+vobcopy (1.0.2-1) unstable; urgency=low
+
+  * Fix possible symlink attack caused by insecure temporary file
+    handling by using mkstemp (CVE-2007-5718; closes: #448319).
+  * Bump standards Version to 3.7.3, no changes needed
+  * Build dependency from "libdvdread3-dev | libdvdread2-dev" to libdvdread-dev
+  * Fix man page typo s/pipeing/piping/ (closes: #367142)
+  * Add upstream TODO file to docs
+  * Add upstream Release-Notes to docs
+  * Change to debhelper compatibility level 5
+  * Tidy up rules file
+  * New upstream release (closes: #381553, #449534)
+    - wrong device name from /etc/fstab instead of /etc/mtab (closes: #345324)
+    - -L option documented in man page (closes: #451144)
+    - -F produces files that are too big (closes: #349682)
+    - inconsistent regarding default of -n (closes: #341742)
+    - checks for free space but it doesn't warn (closes: #341734)
+    - vobcopy: German manual page corrections (closes: #345326)
+    - -m and -n mutually exclusive (closes: #341735)
+    - Off by one error fixed (closes: #451145)
+    - Fix error when filenames end with ;? (closes: #319721)
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Tue, 14 Dec 2007 16:23:25 +0000
+
+vobcopy (0.5.14-2) unstable; urgency=low
+
+  * Put libdvdread3 ahead of libdvdread2 in control file
+  * Change from native to non native Debian package
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Sat, 27 Nov 2004 15:04:21 +0000
+
+vobcopy (0.5.14-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Thu, 18 Nov 2004 11:18:55 +0000
+
+vobcopy (0.5.12-3) unstable; urgency=low
+
+  * Set up vobcopy for backport into woody
+
+ -- Stephen Birch <sgbirch@woody.uk.birch.ws>  Tue,  9 Mar 2004 10:08:07 +0000
+
+vobcopy (0.5.12-2) unstable; urgency=low
+
+  * Add comment to control file per upstream request
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Tue,  9 Mar 2004 06:36:36 +0000
+
+vobcopy (0.5.12-1) unstable; urgency=low
+
+  * New version from upstream
+  * Tidy up changelog files
+  * Added postinst and postrm files for dh_installmenu
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Mon,  8 Mar 2004 11:10:54 +0000
+
+vobcopy (0.5.11-2) unstable; urgency=low
+
+  * Add -f to rm lines in Makefile
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Mon,  8 Mar 2004 09:57:26 +0000
+
+vobcopy (0.5.11-1) unstable; urgency=low
+
+  * New version from upstream
+  * Use dh_installchangelogs -k ChangeLog to install changelogs
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Mon,  1 Mar 2004 15:59:47 +0000
+
+vobcopy (0.5.10-0) unstable; urgency=low
+
+  * Converted Debian control files to policy 3.6.1
+  * Created debian format changelog, old log is archived in changelog.archive
+  * Update vobcopy to use libdvdread3 instead of libdvd2
+  * Clean up copying file a little, add reference to GPL file
+
+ -- Stephen Birch <sgbirch@imsmail.org>  Thu, 26 Feb 2004 15:12:31 +0000
+
+vobcopy (0.5.7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Robos <robos@muon.de>  Fri, 15 Mar 2003 23:27:23 +0200
+
+vobcopy (0.5.6-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Robos <robos@muon.de>  Sun, 9 Feb 2003 23:27:23 +0200
+
+vobcopy (0.5.5-1) unstable; urgency=low
+
+  * New upstream relase. vobcopy now works under SunOS.
+
+ -- Philippe Normand (phil) <sweafty@free.fr>  Sun,  3 Nov 2002 19:20:37 +0100
+
+vobcopy (0.5.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Philippe Normand (phil) <sweafty@free.fr>  Wed, 17 Jul 2002 18:09:23 +0200
+
+vobcopy (0.5.0-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Philippe Normand (phil) <sweafty@free.fr>  Mon, 15 Jul 2002 18:27:23 +0200
+

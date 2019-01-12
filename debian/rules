@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_install:
+	dh_install
+	@echo leave upstream changelog for dh_installchangelogs
+	rm --verbose debian/vobcopy/usr/share/doc/vobcopy/Changelog
+	@echo GNU GPL is included by reference in debian/copyright
+	rm --verbose debian/vobcopy/usr/share/doc/vobcopy/COPYING
